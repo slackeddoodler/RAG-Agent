@@ -23,16 +23,6 @@ Use it directly inside **Cursor IDE** or **VS Code with GitHub Copilot** as an M
 
 ---
 
-## 📦 **Project Structure**
-
-```
-.
-├── server.py
-└── .env
-```
-
----
-
 ## **What This Project Does**
 
 This project builds an MCP server that uses **EyeLevelAI’s GroundX** to ingest and search complex real-world documents. The user interacts through Cursor or VS Code, and the MCP client connects to the server to run tools that upload documents, parse them into structured JSON, and perform advanced semantic search. GroundX handles the heavy lifting—extracting text, tables, images, diagrams, and other multimodal content—so the client can generate accurate, context-aware responses over ingested documents.
@@ -47,11 +37,15 @@ This project builds an MCP server that uses **EyeLevelAI’s GroundX** to ingest
 pip install fastmcp groundx
 ```
 
-Your `server.py` should initialize a **FastMCP** server and register both tools (ingestion + search).
+Your `groundx_client.py` should initialize a **FastMCP** server and register both tools (ingestion + search).
 
 ---
 
-2. Get an API key from EyeLevelAI and store it in `.env`:
+2. Download the `groundx_client.py` file.
+
+---
+
+3. Get an API key from EyeLevelAI and store it in `.env`:
 
 ```
 GROUNDX_API_KEY=your_key_here
@@ -64,11 +58,11 @@ Your `groundx_client.py` will expose:
 
 ---
 
-3. Choose any PDF, place it inside the `docs/` folder, pass its file path during input, and then give another input to query across your uploaded documents.
+4. Choose any PDF, place it inside the `docs/` folder, pass its file path during input, and then give another input to query across your uploaded documents.
 
 ---
 
-4. Connect to Cursor or Github Copilot in VS Code
+5. Connect to Cursor or Github Copilot in VS Code
 
 Inside your Cursor IDE:
 
@@ -76,7 +70,7 @@ Inside your Cursor IDE:
 Cursor → Settings → Cursor Settings → MCP
 ```
 
-Add the MCP server and point it to your `server.py`.
+Add the MCP server and point it to your `groundx_client.py`.
 
 ---
 
